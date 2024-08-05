@@ -1,4 +1,4 @@
-import * as createjs from "createjs-module";
+import * as createjs from 'createjs-module';
 /*if use frontend framework or spa. include this line and fixed problem! :)  */
 
 /**

@@ -1,4 +1,4 @@
-import * as createjs from "createjs-module";
+import * as createjs from 'createjs-module';
 
 var ROS2D = ROS2D || {
   REVISION : '0.9.0'

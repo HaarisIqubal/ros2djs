@@ -6,7 +6,7 @@ var createjs = require('createjs-module'); // don't install npm-createjs -> shou
 var ROSLIB = require('roslib');
 
 function _interopNamespace(e) {
-  if (e && e.__esModule) return e;
+  if (e && e.__esModule) {return e;}
   var n = Object.create(null);
   if (e) {
     Object.keys(e).forEach(function (k) {
@@ -19,7 +19,7 @@ function _interopNamespace(e) {
       }
     });
   }
-  n["default"] = e;
+  n['default'] = e;
   return Object.freeze(n);
 }
 
@@ -96,7 +96,7 @@ var ImageMap = /*@__PURE__*/(function (superclass) {
     this.y -= this.pose.position.y;
   }
 
-  if ( superclass ) ImageMap.__proto__ = superclass;
+  if ( superclass ) {ImageMap.__proto__ = superclass;}
   ImageMap.prototype = Object.create( superclass && superclass.prototype );
   ImageMap.prototype.constructor = ImageMap;
 
@@ -114,13 +114,13 @@ var eventemitter2 = {exports: {}};
  */
 
 (function (module, exports) {
-!function(undefined$1) {
+!(function(undefined$1) {
 	  var hasOwnProperty= Object.hasOwnProperty;
 	  var isArray = Array.isArray ? Array.isArray : function _isArray(obj) {
-	    return Object.prototype.toString.call(obj) === "[object Array]";
+	    return Object.prototype.toString.call(obj) === '[object Array]';
 	  };
 	  var defaultMaxListeners = 10;
-	  var nextTickSupported= typeof process=='object' && typeof process.nextTick=='function';
+	  var nextTickSupported= typeof process==='object' && typeof process.nextTick==='function';
 	  var symbolsSupported= typeof Symbol==='function';
 	  var reflectSupported= typeof Reflect === 'object';
 	  var setImmediateSupported= typeof setImmediate === 'function';
@@ -375,7 +375,7 @@ var eventemitter2 = {exports: {}};
 	    if (!options) { return computedOptions; }
 
 	    if (typeof options !== 'object') {
-	      throw TypeError('options must be an object')
+	      throw TypeError('options must be an object');
 	    }
 
 	    var keys = Object.keys(options);
@@ -384,7 +384,7 @@ var eventemitter2 = {exports: {}};
 	    var reducer;
 
 	    function reject(reason) {
-	      throw Error('Invalid "' + option + '" option value' + (reason ? '. Reason: ' + reason : ''))
+	      throw Error('Invalid "' + option + '" option value' + (reason ? '. Reason: ' + reason : ''));
 	    }
 
 	    for (var i = 0; i < length; i++) {
@@ -420,7 +420,7 @@ var eventemitter2 = {exports: {}};
 	          return v;
 	        }
 	        reject(message);
-	      }
+	      };
 	    }
 
 	    if (len === 2) {
@@ -428,7 +428,7 @@ var eventemitter2 = {exports: {}};
 	        var kind= typeof v;
 	        if (kind === firstType || kind === secondType) { return v; }
 	        reject(message);
-	      }
+	      };
 	    }
 
 	    return function (v, reject) {
@@ -438,7 +438,7 @@ var eventemitter2 = {exports: {}};
 	        if (kind === types[i]) { return v; }
 	      }
 	      reject(message);
-	    }
+	    };
 	  }
 
 	  var functionReducer= makeTypeReducer(['function']);
@@ -495,7 +495,7 @@ var eventemitter2 = {exports: {}};
 	        }];
 	        executor(_resolve, _reject, function (cb) {
 	          if (subscriptionClosed) {
-	            throw Error('Unable to subscribe on cancel event asynchronously')
+	            throw Error('Unable to subscribe on cancel event asynchronously');
 	          }
 	          if (typeof cb !== 'function') {
 	            throw TypeError('onCancel callback must be a function');
@@ -881,7 +881,7 @@ var eventemitter2 = {exports: {}};
 	            _setImmediate(resolve);
 	          }).then(function () {
 	            context.event = event;
-	            return _listener.apply(context, args)
+	            return _listener.apply(context, args);
 	          })) : (nextTick ? process.nextTick : _setImmediate)(function () {
 	            context.event = event;
 	            _listener.apply(context, args);
@@ -1165,7 +1165,7 @@ var eventemitter2 = {exports: {}};
 	      if (arguments[1] instanceof Error) {
 	        throw arguments[1]; // Unhandled 'error' event
 	      } else {
-	        throw new Error("Uncaught, unspecified 'error' event.");
+	        throw new Error('Uncaught, unspecified \'error\' event.');
 	      }
 	    }
 
@@ -1282,7 +1282,7 @@ var eventemitter2 = {exports: {}};
 	      if (arguments[1] instanceof Error) {
 	        return Promise.reject(arguments[1]); // Unhandled 'error' event
 	      } else {
-	        return Promise.reject("Uncaught, unspecified 'error' event.");
+	        return Promise.reject('Uncaught, unspecified \'error\' event.');
 	      }
 	    }
 
@@ -1440,7 +1440,7 @@ var eventemitter2 = {exports: {}};
 	          }
 	        }
 	        if (this._removeListener)
-	          { this.emit("removeListener", type, listener); }
+	          { this.emit('removeListener', type, listener); }
 
 	        return this;
 	      }
@@ -1454,7 +1454,7 @@ var eventemitter2 = {exports: {}};
 	          delete this._events[type];
 	        }
 	        if (this._removeListener)
-	          { this.emit("removeListener", type, listener); }
+	          { this.emit('removeListener', type, listener); }
 	      }
 	    }
 
@@ -1471,7 +1471,7 @@ var eventemitter2 = {exports: {}};
 	        if(fn === fns[i]) {
 	          fns.splice(i, 1);
 	          if (this._removeListener)
-	            { this.emit("removeListenerAny", fn); }
+	            { this.emit('removeListenerAny', fn); }
 	          return this;
 	        }
 	      }
@@ -1479,7 +1479,7 @@ var eventemitter2 = {exports: {}};
 	      fns = this._all;
 	      if (this._removeListener) {
 	        for(i = 0, l = fns.length; i < l; i++)
-	          { this.emit("removeListenerAny", fns[i]); }
+	          { this.emit('removeListenerAny', fns[i]); }
 	      }
 	      this._all = [];
 	    }
@@ -1635,7 +1635,7 @@ var eventemitter2 = {exports: {}};
 	    }, {
 	      timeout: options.timeout,
 	      overload: options.overload
-	    })
+	    });
 	  };
 
 	  function once(emitter, name, options) {
@@ -1705,7 +1705,7 @@ var eventemitter2 = {exports: {}};
 	      },
 	      set: function (n) {
 	        if (typeof n !== 'number' || n < 0 || Number.isNaN(n)) {
-	          throw TypeError('n must be a non-negative number')
+	          throw TypeError('n must be a non-negative number');
 	        }
 	        prototype._maxListeners = n;
 	      },
@@ -1736,7 +1736,7 @@ var eventemitter2 = {exports: {}};
 	    // CommonJS
 	    module.exports = EventEmitter;
 	  }
-	}();
+	}());
 } (eventemitter2));
 
 var EventEmitter2 = eventemitter2.exports;
@@ -1780,7 +1780,7 @@ var ImageMapClient = /*@__PURE__*/(function (EventEmitter2) {
     }.bind(this));
   }
 
-  if ( EventEmitter2 ) ImageMapClient.__proto__ = EventEmitter2;
+  if ( EventEmitter2 ) {ImageMapClient.__proto__ = EventEmitter2;}
   ImageMapClient.prototype = Object.create( EventEmitter2 && EventEmitter2.prototype );
   ImageMapClient.prototype.constructor = ImageMapClient;
 
@@ -1861,7 +1861,7 @@ var OccupancyGrid = /*@__PURE__*/(function (superclass) {
     this.y -= this.pose.position.y;
   }
 
-  if ( superclass ) OccupancyGrid.__proto__ = superclass;
+  if ( superclass ) {OccupancyGrid.__proto__ = superclass;}
   OccupancyGrid.prototype = Object.create( superclass && superclass.prototype );
   OccupancyGrid.prototype.constructor = OccupancyGrid;
 
@@ -1908,7 +1908,7 @@ var Grid = /*@__PURE__*/(function (superclass) {
 
   }
 
-  if ( superclass ) Grid.__proto__ = superclass;
+  if ( superclass ) {Grid.__proto__ = superclass;}
   Grid.prototype = Object.create( superclass && superclass.prototype );
   Grid.prototype.constructor = Grid;
 
@@ -1972,7 +1972,7 @@ var OccupancyGridClient = /*@__PURE__*/(function (EventEmitter2) {
     });
   }
 
-  if ( EventEmitter2 ) OccupancyGridClient.__proto__ = EventEmitter2;
+  if ( EventEmitter2 ) {OccupancyGridClient.__proto__ = EventEmitter2;}
   OccupancyGridClient.prototype = Object.create( EventEmitter2 && EventEmitter2.prototype );
   OccupancyGridClient.prototype.constructor = OccupancyGridClient;
 
@@ -2020,7 +2020,7 @@ var OccupancyGridSrvClient = /*@__PURE__*/(function (EventEmitter2) {
     });
   }
 
-  if ( EventEmitter2 ) OccupancyGridSrvClient.__proto__ = EventEmitter2;
+  if ( EventEmitter2 ) {OccupancyGridSrvClient.__proto__ = EventEmitter2;}
   OccupancyGridSrvClient.prototype = Object.create( EventEmitter2 && EventEmitter2.prototype );
   OccupancyGridSrvClient.prototype.constructor = OccupancyGridSrvClient;
 
@@ -2083,7 +2083,7 @@ var ArrowShape = /*@__PURE__*/(function (superclass) {
   	}
   }
 
-  if ( superclass ) ArrowShape.__proto__ = superclass;
+  if ( superclass ) {ArrowShape.__proto__ = superclass;}
   ArrowShape.prototype = Object.create( superclass && superclass.prototype );
   ArrowShape.prototype.constructor = ArrowShape;
 
@@ -2140,7 +2140,7 @@ var NavigationArrow = /*@__PURE__*/(function (superclass) {
     }
   }
 
-  if ( superclass ) NavigationArrow.__proto__ = superclass;
+  if ( superclass ) {NavigationArrow.__proto__ = superclass;}
   NavigationArrow.prototype = Object.create( superclass && superclass.prototype );
   NavigationArrow.prototype.constructor = NavigationArrow;
 
@@ -2206,7 +2206,7 @@ var NavigationImage = /*@__PURE__*/(function (superclass) {
 
   }
 
-  if ( superclass ) NavigationImage.__proto__ = superclass;
+  if ( superclass ) {NavigationImage.__proto__ = superclass;}
   NavigationImage.prototype = Object.create( superclass && superclass.prototype );
   NavigationImage.prototype.constructor = NavigationImage;
 
@@ -2242,7 +2242,7 @@ var PathShape = /*@__PURE__*/(function (superclass) {
   	superclass.call(this, this.graphics);
   }
 
-  if ( superclass ) PathShape.__proto__ = superclass;
+  if ( superclass ) {PathShape.__proto__ = superclass;}
   PathShape.prototype = Object.create( superclass && superclass.prototype );
   PathShape.prototype.constructor = PathShape;
   /**
@@ -2300,7 +2300,7 @@ var PolygonMarker = /*@__PURE__*/(function (superclass) {
   	this.addChild(this.pointContainer);
   }
 
-  if ( superclass ) PolygonMarker.__proto__ = superclass;
+  if ( superclass ) {PolygonMarker.__proto__ = superclass;}
   PolygonMarker.prototype = Object.create( superclass && superclass.prototype );
   PolygonMarker.prototype.constructor = PolygonMarker;
   /**
@@ -2368,7 +2368,7 @@ var PolygonMarker = /*@__PURE__*/(function (superclass) {
   	// 3 points -> 4 points, 4 lines: change last line, add line between new point and first point
   	// etc
 
-  	if (numPoints < 2) ;
+  	if (numPoints < 2) {;}
   	else if (numPoints < 3) {
   		// Now 2 points: add line between previous and new point
   		var line = this.createLineShape(this.pointContainer.getChildAt(numPoints-2), point);
@@ -2412,7 +2412,7 @@ var PolygonMarker = /*@__PURE__*/(function (superclass) {
 
   	var numPoints = this.pointContainer.getNumChildren();
 
-  	if (numPoints < 2) ;
+  	if (numPoints < 2) {;}
   	else if (numPoints < 3) {
   		// 2 points: remove all lines
   		this.lineContainer.removeAllChildren();
@@ -2566,7 +2566,7 @@ var TraceShape = /*@__PURE__*/(function (superclass) {
   	superclass.call(this, this.graphics);
   }
 
-  if ( superclass ) TraceShape.__proto__ = superclass;
+  if ( superclass ) {TraceShape.__proto__ = superclass;}
   TraceShape.prototype = Object.create( superclass && superclass.prototype );
   TraceShape.prototype.constructor = TraceShape;
   /**
