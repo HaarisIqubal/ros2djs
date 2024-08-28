@@ -1916,8 +1916,7 @@ var OccupancyGridClient = /*@__PURE__*/(function (EventEmitter2) {
     var rosTopic = new ROSLIB.Topic({
       ros : ros,
       name : topic,
-      messageType : 'nav_msgs/OccupancyGrid',
-      compression : 'png'
+      messageType : 'nav_msgs/OccupancyGrid'
     });
 
     rosTopic.subscribe(function(message) {
